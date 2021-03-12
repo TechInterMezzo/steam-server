@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  IMAGE_NAME: steam-server
+
 jobs:
   push:
     runs-on: ubuntu-latest
@@ -21,7 +24,6 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_NAME=${{ github.event.repository.name }}
           IMAGE_ID=ghcr.io/${{ github.repository }}
 
           # Change all uppercase to lowercase
